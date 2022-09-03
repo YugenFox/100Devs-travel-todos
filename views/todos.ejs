@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1>Things To Do List</h1>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
@@ -18,14 +18,31 @@
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <h2><%= user.userName %> has added <%= left %> things to do.</h2>
+
+    
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
         <input type="submit">
     </form>
 
-    <a href="/logout">Logout</a>
+    <!-- <a href="/logout">Logout</a> -->
+    
+    <span class="logout">
+        <a href="/logout">Logout </a>
+    </span>
+
+    <br><br>
+    <span>Choose your background color</span>
+    <br><br>
+    <!-- choose fav color -->
+    <select class="form-control" onchange="changeColor(this)">
+        <option value="yellow">Yellow</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
 
     <script src="js/main.js"></script>
 </body>
